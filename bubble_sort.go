@@ -6,9 +6,9 @@ package sorts
 // 	func Swap(i, j int)
 // }
 
+// BubbleSort do bubble sort
 func BubbleSort(s []int) []int {
-	length := len(s)
-	for i := length - 1; i > 0; i-- {
+	for i := len(s)-1; i > 0; i-- {
 		swap := false
 		for j := 0; j < i; j++ {
 			if s[j] > s[j+1] {
