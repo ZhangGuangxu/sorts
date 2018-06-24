@@ -11,18 +11,6 @@ func TestLog2(t *testing.T) {
 	}
 }
 
-func TestExp2(t *testing.T) {
-	v := exp2(3)
-	if v != 8 {
-		t.Errorf("exp2(3) want %d, got %d", 8, v)
-	}
-
-	v = 1 << 0
-	if v != 1 {
-		t.Errorf("1 << 0 want %d, got %d", 1, v)
-	}
-}
-
 func TestShellSort(t *testing.T) {
 	s := []int{1, 2, 3, 4, 5}
 	ShellSort(s)

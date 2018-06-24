@@ -21,15 +21,6 @@ func log2(x int) int {
 	return r
 }
 
-func exp2(x int) int {
-	if x < 0 {
-		panic(fmt.Errorf("exp2(x), x=%v", x))
-	}
-
-	r := 1
-	return r << uint(x)
-}
-
 // ShellSort do shell sort
 func ShellSort(s []int) {
 	sLen := len(s)
@@ -42,7 +33,7 @@ func ShellSort(s []int) {
 	interval := sLen
 	for i := 0; i < t; i++ {
 		//interval = int(math.Exp2(float64(t-i+1)) - 1)
-		interval = exp2(t-i) - 1
+		interval = 1 << uint(t-i) - 1
 		for j := interval; j < sLen; j++ {
 			if s[j] < s[j-interval] {
 				tmp := s[j]
